@@ -1,32 +1,25 @@
-// File: kotlin-lib/build.gradle (Groovy DSL)
 plugins {
     id 'com.android.library' version '8.2.0'
     id 'org.jetbrains.kotlin.android' version '1.9.0'
 }
 
 android {
-    namespace 'com.example.hc'
+    namespace 'com.ifit.healthconnect'
     compileSdk 34
 
     defaultConfig {
-        minSdk 26
+        minSdk 21
+        targetSdk 34
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
     }
-    kotlinOptions {
-        jvmTarget = '17'
-    }
-}
-
-repositories {
-    google()
-    mavenCentral()
 }
 
 dependencies {
-    implementation "androidx.health.connect:connect-client:1.1.0" // update to latest if needed
-    implementation "androidx.activity:activity-ktx:1.9.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
+    implementation "androidx.health.connect:connect-client:1.1.0"
 }
