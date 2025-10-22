@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-        google()            // REQUIRED for com.android.library
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -13,3 +13,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+rootProject.name = "kotlin"
+include(":library")
